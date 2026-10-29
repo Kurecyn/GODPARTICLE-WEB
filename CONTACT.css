@@ -106,10 +106,10 @@
   display: block;
 }
 
-/* CONTACT */
+
 body {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .contact {
@@ -128,5 +128,9 @@ body {
 
 .contact .desc {
   margin: 20px 0;
-  color: black;
+  color: white;
+}
+
+html {
+  overflow: scroll;
 }
