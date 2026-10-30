@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+
+.NAVBAR {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414; 
+  padding: 0 40px;
+  height: 65px;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.LOGO a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.LOGO-IMG {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.LOGO-IMG:hover {
+  transform: scale(1.05); 
+}
+
+.NAV {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.NAV li {
+  position: relative;
+}
+
+.NAV a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 20px 0;
+}
+
+.NAV a:hover,
+.NAV .ISI:hover .ISI-btn {
+  color: #ff0033;
+}
+
+.arrow {
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+
+.ISI-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f0f0f;
+  min-width: 260px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  border: 1px solid #222;
+  border-top: 2px solid #ff0033;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.ISI-header {
+  font-size: 11px;
+  font-weight: 800;
+  color: #888888;
+  padding: 8px 18px 4px 18px;
+  letter-spacing: 1px;
+}
+
+.ISI-menu li a {
+  padding: 8px 18px;
+  color: #cccccc;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.ISI-menu li a:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding-left: 22px;
+}
+
+.NAV .ISI:hover .ISI-menu {
+  display: block;
+}
+
+
+.HERO-CONTAINER {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 65px);
+  min-height: 520px; 
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.GP {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.PART-ITEM {
+  position: absolute;
+  z-index: 2;
+  width: clamp(85px, 11vw, 155px);
+  height: clamp(85px, 11vw, 155px);
+  background: rgba(20, 20, 20, 0.75);
+  border: 1px solid rgba(255, 0, 51, 0.4);
+  border-radius: 12px;
+  padding: clamp(6px, 1vw, 12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+.PART-ITEM img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.PART-ITEM:hover {
+  transform: scale(1.15) !important;
+  border-color: #ff0033;
+  box-shadow: 0 0 25px rgba(255, 0, 51, 0.7);
+  z-index: 5;
+}
+
+
+.part-tl { top: 7%; left: 8%; animation-delay: 0s; }     
+.part-tr { top: 7%; right: 8%; animation-delay: 0.7s; }  
+.part-ml { top: 45%; left: 3%; animation-delay: 1.4s; }   
+.part-mr { top: 45%; right: 3%; animation-delay: 2.1s; }  
+.part-bl { bottom: 7%; left: 8%; animation-delay: 2.8s; }
+.part-br { bottom: 7%; right: 8%; animation-delay: 3.5s;}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+
+@media (max-width: 768px) {
+  .part-tl { top: 5%; left: 4%; }
+  .part-tr { top: 5%; right: 4%; }
+  .part-ml { top: 45%; left: 2%; }
+  .part-mr { top: 45%; right: 2%; }
+  .part-bl { bottom: 5%; left: 4%; }
+  .part-br { bottom: 5%; right: 4%; }
+}
+
+
+.SCROLL-SECTION {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #0a0a0a;
+  border-top: 2px solid #ff0033;
+}
+
+.TITLE-MAIN {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 6px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(255, 0, 51, 0.35);
+}
+
+.TITLE-SUB {
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: clamp(4px, 1vw, 10px);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
